@@ -13,9 +13,11 @@ public class Main {
 
         Set<String> result = new HashSet<>();
         try {
-            //https://github.com/danilbo/TestFileReader/blob/master/src/main/resources/test.txt
+            //https://github.com/danilbo/TestFileReader/blob/master/src/main/resources/test.txt.gz
             //https://github.com/PeacockTeam/new-job/releases/download/v1.0/lng-4.txt.gz
-            URL url = new URL("https://github.com/danilbo/TestFileReader/blob/master/src/main/resources/test.txt");
+            //URL url = new URL("https://github.com/danilbo/TestFileReader/blob/master/src/main/resources/test.txt.gz");
+            URL url = new URL("file://C:/Projects/Java/FileReader/src/main/resources/test.txt.gz");
+
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = connection.getInputStream();
             GZIPInputStream gzipInputStream = new GZIPInputStream(inputStream);
