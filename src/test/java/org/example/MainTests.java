@@ -17,7 +17,7 @@ class MainTests {
     @MethodSource("dataProvider")
     void myParameterizedTest1(String input, boolean expected) {
         // Тестовая логика
-
+        //https://github.com/danilbo/TestFileReader/blob/master/src/main/resources/test.txt
         Assertions.assertEquals(expected, wordIsValid(input));
     }
 

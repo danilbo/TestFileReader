@@ -13,18 +13,23 @@ public class Main {
 
         Set<String> result = new HashSet<>();
         try {
-            URL url = new URL("https://github.com/PeacockTeam/new-job/releases/download/v1.0/lng-4.txt.gz");
+            //https://github.com/danilbo/TestFileReader/blob/master/src/main/resources/test.txt
+            //https://github.com/PeacockTeam/new-job/releases/download/v1.0/lng-4.txt.gz
+            URL url = new URL("https://github.com/danilbo/TestFileReader/blob/master/src/main/resources/test.txt");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = connection.getInputStream();
             GZIPInputStream gzipInputStream = new GZIPInputStream(inputStream);
             BufferedReader reader = new BufferedReader(new InputStreamReader(gzipInputStream));
-            List<String> words = new ArrayList<>();
+            List<String> words;
             String line;
             while ((line = reader.readLine()) != null) {
-                words = List.of(line.split(";"));
-                for (String word: words) {
-
-                }
+                System.out.println(line);
+//                words = List.of(line.split(";"));
+//                for (int i = 0; i < words.size(); i++) {
+//                    if (!wordIsValid(words.get(i))){
+//                        continue;
+//                    }
+//                }
             }
 
             reader.close();
